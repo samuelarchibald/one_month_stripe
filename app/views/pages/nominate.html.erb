@@ -1,0 +1,43 @@
+    <div class="nominate">
+      <div class="nominate-head">       
+        <h1 class="center">Nominate Your App</h1>
+        <h4 class="center">$150 Earlybird Special</h2>
+      </div>
+      <div class="step step-1">
+        <h3>Step 1. Personal Info</h4>
+        <input type="text" placeholder="Company Email">               
+        <input type="text" placeholder="Your Name">               
+        <input type="text" placeholder="Company Name">
+        <button id="button-step-1">Next Step</button>
+      </div>
+      <div class="step step-2">
+        <h3>Step 2. App Info</h4>
+        <input type="text" placeholder="App Name">
+        <p>Which OS does your app run on?</p>
+        <select>
+          <option value="itunes">Apple App Store</option>
+          <option value="google">Google Play Store</option>
+          <option value="microsoft">Microsoft App Store</option>
+        </select> 
+        <p>If your app runs on multiple, choose the one you would like us to review</p>       
+        <input type="text" placeholder="iTunes Store URL">               
+        <input type="text" placeholder="Categories (Seperated by commas)">
+        <button id="button-step-2">Next Step</button>
+      </div>
+      <div class="step step-3">
+        <h3>Step 3. Payment</h4>
+      </div>
+    </div> 
+
+
+    <script>
+		$("#button-step-1").click(function(){
+		     $(".step-1").animate({left: '-5000px'});
+		     $(".step-2").animate({top: '40px'});
+		});
+
+		$("#button-step-2").click(function(){
+		     $(".step-2").animate({left: '-5000px'});
+		     $(".step-3").animate({top: '-470px'});
+		});
+    </script>
