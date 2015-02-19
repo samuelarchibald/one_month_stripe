@@ -3,6 +3,7 @@ class ChargesController < ApplicationController
 	end
 	def create
 	  # Amount in cents
+	  @amount = 15000
 
 	  customer = Stripe::Customer.create(
 	    :email => params[:stripeEmail],
@@ -11,7 +12,7 @@ class ChargesController < ApplicationController
 
 	  charge = Stripe::Charge.create(
 	    :customer    => customer.id,
-	    :amount      => params[:amount],
+	    :amount      => @amount,
 	    :description => 'Silicon Beach App Awards Nomination',
 	    :currency    => 'usd'
 	  )
@@ -22,7 +23,7 @@ class ChargesController < ApplicationController
 	 							 description: charge.description,
 	 							 currency: charge.currency,
 	 							 customer_id: customer.id,
-	 							 product_id: 1)
+	 							 product_id: 1, uuid: SecureRandom.uuid)
 	 redirect_to purchase
 
 	rescue Stripe::CardError => e
