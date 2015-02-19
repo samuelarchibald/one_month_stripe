@@ -7,4 +7,7 @@ class PagesController < ApplicationController
 	
 	def nominate
 	end
+
+	def judging
+	end
 end

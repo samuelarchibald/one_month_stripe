@@ -3,10 +3,11 @@ Rails.application.routes.draw do
   root 'pages#home'
   match '/about', :to => 'pages#about', :via => :get
   match '/nominate', :to => 'pages#nominate', :via => :get
+  match '/judging', :to => 'pages#judging', :via => :get
 
   #support stripe payments!
   resources :charges
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
