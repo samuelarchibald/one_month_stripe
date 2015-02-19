@@ -26,21 +26,23 @@
       </div>
       <div class="step step-3">
         <h3>Step 3. Payment</h4>
+            <%= form_tag charges_path, id:'chargeForm' do %>
+        <article>
+          <label class="amount">
+            <span>Amount: $5.00</span>
+          </label>
+        </article>
+
+        <script src="https://checkout.stripe.com/checkout.js"
+                class="stripe-button"
+                data-key="<%= Rails.configuration.stripe[:publishable_key]%>"
+                data-description="A month's subscription"
+                data-amount="500"></script>
+      <% end %>
       </div>
     </div> 
 	
-	<%= form_tag charges_path do %>
-			  <article>
-			    <label class="amount">
-			      <span>Amount: $5.00</span>
-			    </label>
-			  </article>
 
-			  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-			          data-key="<%= Rails.configuration.stripe[:publishable_key]%>"
-			          data-description="A month's subscription"
-			          data-amount="500"></script>
-			<% end %>
 
     <script>
 		$("#button-step-1").click(function(){
