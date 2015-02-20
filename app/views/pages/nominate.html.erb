@@ -28,13 +28,13 @@
         <h3>Step 3. Payment</h4>
             <%= form_tag charges_path, id: 'chargeForm' do %>
 
-              <script
-    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="pk_test_wrwf3Xx8zRWLR8m8FC5tahEQ"
-    data-name="Demo Site"
-    data-description="2 widgets ($20.00)"
-    data-amount="2000">
-  </script>
+                                <script
+                      src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                      data-key="pk_test_wrwf3Xx8zRWLR8m8FC5tahEQ"
+                      data-name="Demo Site"
+                      data-description="2 widgets ($20.00)"
+                      data-amount="2000">
+                    </script>
 
           <% end %>
       </div>

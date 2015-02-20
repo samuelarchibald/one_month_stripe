@@ -1,6 +1,6 @@
 class CreatePurchases < ActiveRecord::Migration
   def change
-    create_table :purchases do |t|
+    create_table :purchase do |t|
     	t.string :email
     	t.integer :amount
     	t.string :description
